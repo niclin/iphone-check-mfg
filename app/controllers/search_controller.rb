@@ -7,92 +7,103 @@ class SearchController < ApplicationController
         render :text => "輸入錯誤的序號"
       else
         location = params[:imei][0]
-        result = []
+        result = {}
+        @bingo = false
 
         case location
         when 'C'
-          result << "深圳"
+          result[:location] = "深圳"
         when 'D'
-          result << "成都"
+          result[:location] = "成都"
         when 'F'
-          result << "鄭州"
+          result[:location] = "鄭州"
         end
 
         year = params[:imei][3]
 
         case year
         when 'P'
-          result << "2015年上半年"
+          result[:year] = "2015年上半年"
         when 'Q'
-          result << "2015年下半年"
+          result[:year] = "2015年下半年"
         when 'R'
-          result << "2016年上半年"
+          result[:year] = "2016年上半年"
         when 'S'
-          result << "2016年下半年"
+          result[:year] = "2016年下半年"
         end
 
         week = params[:imei][4]
 
         case week
         when '1'
-          result << ['0701','0707']
+          result[:week] = ['0701','0707']
         when '2'
-          result << ['0708','0714']
+          result[:week] = ['0708','0714']
         when '3'
-          result << ['0715','0721']
+          result[:week] = ['0715','0721']
         when '4'
-          result << ['0722','0728']
+          result[:week] = ['0722','0728']
         when '5'
-          result << ['0729','0804']
+          result[:week] = ['0729','0804']
         when '6'
-          result << ['0805','0811']
+          result[:week] = ['0805','0811']
         when '7'
-          result << ['0812','0818']
+          result[:week] = ['0812','0818']
         when '8'
-          result << ['0819','0825']
+          result[:week] = ['0819','0825']
         when '9'
-          result << ['0826','0901']
+          result[:week] = ['0826','0901']
+          @bingo = true
         when 'C'
-          result << ['0902','0908']
+          result[:week] = ['0902','0908']
+          @bingo = true
         when 'D'
-          result << ['0909','0915']
+          result[:week] = ['0909','0915']
+          @bingo = true
         when 'F'
-          result << ['0916','0922']
+          result[:week] = ['0916','0922']
+          @bingo = true
         when 'G'
-          result << ['0923','0929']
+          result[:week] = ['0923','0929']
+          @bingo = true
         when 'H'
-          result << ['0930','1006']
+          result[:week] = ['0930','1006']
+          @bingo = true
         when 'J'
-          result << ['1007','1013']
+          result[:week] = ['1007','1013']
+          @bingo = true
         when 'K'
-          result << ['1014','1020']
+          result[:week] = ['1014','1020']
+          @bingo = true
         when 'L'
-          result << ['1021','1027']
+          result[:week] = ['1021','1027']
+          @bingo = true
         when 'M'
-          result << ['1028','1103']
+          result[:week] = ['1028','1103']
+          @bingo = true
         when 'N'
-          result << ['1104','1110']
+          result[:week] = ['1104','1110']
         when 'P'
-          result << ['1111','1117']
+          result[:week] = ['1111','1117']
         when 'Q'
-          result << ['1118','1124']
+          result[:week] = ['1118','1124']
         when 'R'
-          result << ['1125','1201']
+          result[:week] = ['1125','1201']
         when 'T'
-          result << ['1202','1208']
+          result[:week] = ['1202','1208']
         when 'V'
-          result << ['1209','1215']
+          result[:week] = ['1209','1215']
         when 'W'
-          result << ['1216','1222']
+          result[:week] = ['1216','1222']
         when 'X'
-          result << ['1223','1229']
+          result[:week] = ['1223','1229']
         when 'Y'
-          result << ['1230','1231']
+          result[:week] = ['1230','1231']
         end
 
-        @location = result[0]
-        @day_begin = Date.parse(result[1][0..3] + result[2][0])
-        @day_end = Date.parse(result[1][0..3] + result[2][1])
+        @location = result[:location]
+        @day_begin = Date.parse(result[:year][0..3] + result[:week][0])
+        @day_end = Date.parse(result[:year][0..3] + result[:week][1])
 
       end
     end

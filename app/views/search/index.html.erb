@@ -3,3 +3,8 @@
 生產時間：<%= @day_begin %>～<%= @day_end%>
 <br>
 是否符合iphone6S電池召修方案：
+<% if @bingo %>
+中獎惹
+<% else %>
+還沒中獎
+<% end %>
