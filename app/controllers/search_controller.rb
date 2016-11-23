@@ -88,11 +88,8 @@ class SearchController < ApplicationController
       end
 
 
-
-
       day_begin = Date.parse(result[1][0..3] + result[2][0])
       day_end = Date.parse(result[1][0..3] + result[2][1])
-
 
       render :text => "生產地點：#{result[0]}, 生產時間： #{day_begin}~#{day_end}"
     else
