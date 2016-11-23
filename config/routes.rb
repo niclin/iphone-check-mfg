@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "search#index"
+  root "welcome#index"
 
   resources "search"
 end

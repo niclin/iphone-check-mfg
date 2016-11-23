@@ -1,5 +1,5 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:imei, "查詢iphone6s的生產日期:") %>
-  <%= text_field_tag(:imei) %>
-  <%= submit_tag("搜尋") %>
-<% end %>
+生產地點：<%= @location %>
+<br>
+生產時間：<%= @day_begin %>～<%= @day_end%>
+<br>
+是否符合iphone6S電池召修方案：
