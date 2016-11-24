@@ -16,8 +16,28 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 .col-centered {
     float: none;
     margin: 0 auto;
+}
+
+.search-wrapper {
+    background-color: #F05F40;
+    padding: 35px;
+}
+
+hr.light {
+    border-color: #fff;
+}
+
+.imei-input {
+    color: white;
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #233140;
+    color: white;
 }
