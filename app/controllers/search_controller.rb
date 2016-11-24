@@ -104,8 +104,14 @@ class SearchController < ApplicationController
         @bingo = false
       end
 
-      @day_begin = Date.parse(result[:year][0..3] + result[:week][0])
-      @day_end = Date.parse(result[:year][0..3] + result[:week][1])
+      if year == "P" or year == "R"
+        @day_begin = result[:year][0..3] + "上半年"
+        @day_end = ""
+      else
+        @day_begin = Date.parse(result[:year][0..3] + result[:week][0])
+        @day_end = Date.parse(result[:year][0..3] + result[:week][1])
+
+      end
 
     end
   end
