@@ -1,24 +1,24 @@
 <section class="search-wrapper">
-
-<div class="container">
-  <div class="row">
-        <div class="col-md-6 col-centered">
-        <%= form_tag(search_index_path, method: :get) do %>
-        <h2 class="imei-input text-center">檢查您的手機生產日期及產地</h2>
-        <h3 class="imei-input text-center">立刻輸入你的Iphone序號</h3>
-        <hr class="light">
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" name="imei" class="form-control input-lg" placeholder="ex:DNPQ3R4FGRYD" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default btn-lg" type="submit">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-centered">
+                <%= form_tag(search_index_path, method: :get) do %>
+                <h2 class="imei-input text-center">檢查您的手機生產日期及產地</h2>
+                <h3 class="imei-input text-center">立刻輸入你的Iphone序號</h3>
+                <hr class="light">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" name="imei" class="form-control input-lg" placeholder="ex:DNPQ3R4FGRYD" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="submit">
                             <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+                            </button>
+                        </span>
+                    </div>
+                    <h4 class="imei-input text-center">設定->一般->關於本機->序號</h4>
                 </div>
             </div>
+            <% end %>
         </div>
-        <% end %>
-  </div>
-</div>
+    </div>
 </section>
