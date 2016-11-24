@@ -1,4 +1,16 @@
-生產地點：<%= @location %>
+
+
+<section class="result-wrapper">
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="iphone">
+        <%= image_tag 'iphone.png', class: 'img-responsive'%>
+      </div>
+    </div>
+    <div class="col-xs-6">
+ 生產地點：<%= @location %>
 <br>
 生產時間：<%= @day_begin %>～<%= @day_end%>
 <br>
@@ -10,3 +22,10 @@
 <% end %>
 <br>
 <%= link_to '繼續查詢', root_path %>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
