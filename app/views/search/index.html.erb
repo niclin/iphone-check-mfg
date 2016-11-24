@@ -1,31 +1,41 @@
-
-
 <section class="result-wrapper">
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="iphone">
-        <%= image_tag 'iphone.png', class: 'img-responsive'%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="iphone">
+          <%= image_tag 'iphone.png', class: 'img-responsive'%>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th style="width: 30%">製造地點</th>
+              <th>生產時間</th>
+              <th>召修方案</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= @location %>
+              </td>
+              <td>
+                <%= @day_begin %>～<%= @day_end%>
+              </td>
+              <td>
+                <% if @bingo %>
+                符合Iphone6s電池召修方案
+                <% else %>
+                無符合方案
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          <%= link_to '繼續查詢', root_path, class: 'btn btn-primary pull-right' %>
       </div>
     </div>
-    <div class="col-xs-6">
- 生產地點：<%= @location %>
-<br>
-生產時間：<%= @day_begin %>～<%= @day_end%>
-<br>
-是否符合iphone6S電池召修方案：
-<% if @bingo %>
-中獎惹
-<% else %>
-還沒中獎
-<% end %>
-<br>
-<%= link_to '繼續查詢', root_path %>
-    </div>
   </div>
-</div>
-
-
-
+  <br>
 </section>
