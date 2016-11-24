@@ -110,7 +110,6 @@ class SearchController < ApplicationController
       else
         @day_begin = Date.parse(result[:year][0..3] + result[:week][0])
         @day_end = Date.parse(result[:year][0..3] + result[:week][1])
-
       end
 
     end
